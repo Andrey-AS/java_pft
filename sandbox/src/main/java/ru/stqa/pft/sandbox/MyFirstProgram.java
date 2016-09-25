@@ -1,5 +1,7 @@
 package ru.stqa.pft.sandbox;
 
+import java.awt.*;
+
 public class MyFirstProgram {
 	
 	public static void main(String[] args) {
@@ -7,26 +9,23 @@ public class MyFirstProgram {
     hello("user");
     hello("Andry");
 
-    double l = 12.14;
-    System.out.println("Площадь квадрата со стороной " + l + " метров = +" + area(l));
-    double a = 5;
-    double b = 8;
-    System.out.println("Площадь прямоугольника со сторонами " + a + "x" + b  + " равна " + area(a,b));
-    int c = 3051;
-    int d = 1400;
-    System.out.println("Сумма двух чисел " + c + " + " + d + " = " + sum(c,d));
+    Square s = new Square(5);
+    System.out.println("Площадь квадрата со стороной " + s.l + " метров = " + s.area());
+
+    Reader ss = new Reader(8,98);
+    System.out.println("Площадь прямоугольника со сторонами " + ss.a + "x" + ss.b  + " равна " + ss.area());
+
+    Sum z = new Sum(251,406);
+    System.out.println("Сумма двух чисел " + z.a + " + " + z.b + " = " + z.sum());
+
+
+    Point p1 = new Point(5,0);
+    Point p2 = new Point(0,0);
+
+    System.out.println("Расстояние между двумя точками с координатами (" + p1.x + "," + p1.y + ") и ("  + p2.x + "," + p2.y + ") равна " + p1.distance(p2));
   }
   public static void hello(String somebody) {
     System.out.println("Hello, " + somebody + "!");
   }
 
-  public static double area(double arifaktr) {
-    return arifaktr*arifaktr;
-  }
-  public static double area(double a, double b) {
-    return a * b;
-  }
-  public static int sum(int a, int b) {
-    return a + b;
-  }
 }
