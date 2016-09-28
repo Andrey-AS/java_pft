@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -15,14 +16,33 @@ import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
 public class GroupCreationTests {
+    /*public static void hello() {
+        System.out.println("Проверка вывода");
+    }*/
+
     FirefoxDriver wd;
-    
+
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        /*
+        //Какая то хня
+        System.setProperty("webdriver.gecko.driver", "D:\\Program Files\\GekoDriver\\geckodriver.exe");
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setCapability("marionette", true);
+        WebDriver wd = new FirefoxDriver(capabilities);
+        //Какая то хня
+*/
+        //Какая то хня
+       // System.setProperty("webdriver.gecko.driver", "D:\\Program Files\\GekoDriver\\geckodriver.exe");
+        //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        //capabilities.setCapability("marionette", true);
+       // WebDriver wd = new FirefoxDriver(capabilities);
+        //Какая то хня
+
+        this.wd = new FirefoxDriver();
+        this.wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
-    
+
     @Test
     public void GroupCreationTests() {
         wd.get("http://localhost/addressbook/");
@@ -37,10 +57,10 @@ public class GroupCreationTests {
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys("test1");
-        if (!wd.findElement(By.xpath("//div[@id='content']//select[normalize-space(.)='[none]']//option[1]")).isSelected()) {
-            wd.findElement(By.xpath("//div[@id='content']//select[normalize-space(.)='[none]']//option[1]")).click();
-        }
+        wd.findElement(By.name("group_name")).sendKeys("test11");
+//        if (!wd.findElement(By.xpath("//div[@id='content']//select[normalize-space(.)='[none]']//option[1]")).isSelected()) {
+//            wd.findElement(By.xpath("//div[@id='content']//select[normalize-space(.)='[none]']//option[1]")).click();
+//        }
         wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).clear();
         wd.findElement(By.name("group_header")).sendKeys("test2");
@@ -50,12 +70,12 @@ public class GroupCreationTests {
         wd.findElement(By.name("submit")).click();
         wd.findElement(By.linkText("group page")).click();
     }
-    
+
     @AfterMethod
     public void tearDown() {
         wd.quit();
     }
-    
+
     public static boolean isAlertPresent(FirefoxDriver wd) {
         try {
             wd.switchTo().alert();
