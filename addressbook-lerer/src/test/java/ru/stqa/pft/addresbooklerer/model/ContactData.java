@@ -1,6 +1,7 @@
 package ru.stqa.pft.addresbooklerer.model;
 
 public class ContactData {
+  private final String firstname;
   private final String middlename;
   private final String lastname;
   private final String nickname;
@@ -14,11 +15,14 @@ public class ContactData {
   private final String email2;
   private final String email3;
   private final String homepage;
+  private final String byear;
+  private final String ayear;
   private final String address2;
   private final String phone2;
   private final String notes;
 
-  public ContactData(String middlename, String lastname, String nickname, String title, String company, String address, String home, String mobile, String work, String fax, String email2, String email3, String homepage, String address2, String phone2, String notes) {
+  public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String home, String mobile, String work, String fax, String email2, String email3, String byear, String homepage, String ayear, String address2, String phone2, String notes) {
+    this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
     this.nickname = nickname;
@@ -32,9 +36,15 @@ public class ContactData {
     this.email2 = email2;
     this.email3 = email3;
     this.homepage = homepage;
+    this.byear = byear;
+    this.ayear = ayear;
     this.address2 = address2;
     this.phone2 = phone2;
     this.notes = notes;
+  }
+
+  public String getFirstname() {
+    return firstname;
   }
 
   public String getMiddlename() {
@@ -87,6 +97,14 @@ public class ContactData {
 
   public String getHomepage() {
     return homepage;
+  }
+
+  public String getByear() {
+    return byear;
+  }
+
+  public String getAyear() {
+    return ayear;
   }
 
   public String getAddress2() {

@@ -31,4 +31,8 @@ public class HelperBase {
       return false;
     }
   }
+
+  protected boolean isSelected(By xpath) {
+    return wd.findElement(xpath).isSelected();
+  }
 }
