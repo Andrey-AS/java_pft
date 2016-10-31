@@ -17,7 +17,6 @@ public class ContactGreationTest extends TestBase {
         app.getGroupHelper().returnToGroupPage(); */
     app.getNavigationHelper().gotoAddNew();
     //wd.findElement(By.linkText("add new")).click();
-    // данные по контактной форме
     app.getGroupHelper().fillContactFor(new ContactData("Серж", "Отчество", "Фамилия", "Ник", "Название", "Компания", "адресссс", "Дом", "мобила", "рабочий", "факс", "sdfsldkfsl@mail.ru", "lsdkjklsdkl3.sdk@mail.ru", "домашняя страница", "1978", "1999", "дополнительный адрес", "доп телефон", "доп примечание"));
     app.getGroupHelper().subminModification();
   }
