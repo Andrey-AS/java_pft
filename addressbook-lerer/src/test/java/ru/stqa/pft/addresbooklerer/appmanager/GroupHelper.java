@@ -79,7 +79,7 @@ public class GroupHelper extends HelperBase {
       click(By.xpath("//div[@id='content']/form/select[4]//option[5]"));
     }
     type(By.name("ayear"), contactData.getAyear());
-
+    
     if (!isSelected(By.xpath("//div[@id='content']/form/select[5]//option[2]"))) {
       click(By.xpath("//div[@id='content']/form/select[5]//option[2]"));
     }
