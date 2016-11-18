@@ -14,7 +14,7 @@ public class ContactModificationTest extends TestBase {
     app.getContactHelper().editContact();
 //    app.getContactHelper().deleteSelectedContact();
 //    app.getContactHelper().alertDeletion();
-    app.getContactHelper().fillContactFor(new ContactData("Серега11", "Отчество", "Фамилия", "Ник", "Название", "Компания", "адресссс", "Дом", "мобила", "рабочий", "факс", "sdfsldkfsl@mail.ru", "lsdkjklsdkl3.sdk@mail.ru", "домашняя страница", "1978", "1999", "дополнительный адрес1", "доп телефон1", "доп примечание1"));
+    app.getContactHelper().fillContactFor(new ContactData("Серега11", "Отчество", "Фамилия", "Ник", "Название", "Компания", "адресссс", "Дом", "мобила", "рабочий", "факс", "sdfsldkfsl@mail.ru", "lsdkjklsdkl3.sdk@mail.ru", "домашняя страница", "1978", "1999", "дополнительный адрес1", "доп телефон1", "доп примечание1", null),false);
     app.getContactHelper().updateContact();
     app.getNavigationHelper().gotoHome();
   }
